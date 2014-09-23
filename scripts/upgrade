@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Retrieve arguments
-domain=$(sudo yunohost app setting respawn domain)
-path=$(sudo yunohost app setting respawn path)
-user=$(sudo yunohost app setting respawn ftp_user)
-is_public=$(sudo yunohost app setting respawn is_public)
+domain=$(sudo yunohost app setting my_webapp domain)
+path=$(sudo yunohost app setting my_webapp path)
+user=$(sudo yunohost app setting my_webapp ftp_user)
+is_public=$(sudo yunohost app setting my_webapp is_public)
 final_path=/var/www/respawn
 
 # Modify Nginx configuration file and copy it to Nginx conf directory
@@ -15,9 +15,9 @@ sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/respawn.conf
 # Make app public if necessary
 if [ "$is_public" = "Yes" ];
 then
-    sudo yunohost app setting respawn skipped_uris -v "/"
+    sudo yunohost app setting my_webapp skipped_uris -v "/"
 fi
 
-# Reload Nginx, restart PureFTPd and regenerate SSOwat conf
+# Reload Nginx and regenerate SSOwat conf
 sudo service nginx reload
 sudo yunohost app ssowatconf

@@ -1,9 +1,9 @@
 {
-    "name": "Respawn",
-    "id": " respawn",
+    "name": "respawn",
+    "id": "respawn",
     "description": {
-        "en": "Read KeePass 2.X password database",
-        "fr": "Lecture des bases de données de mot de passe au format Keepass 2.X"
+       "en": "Read KeePass 2.X password database",
+       "fr": "Lecture des bases de données de mot de passe au format Keepass 2.X"
     },
     "developer": {
         "name": "alextuxy",
