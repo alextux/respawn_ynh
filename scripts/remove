@@ -1,0 +1,9 @@
+#!/bin/bash
+
+domain=$(sudo yunohost app setting respawn domain)
+
+sudo rm -rf /var/www/respawn
+sudo rm -f /etc/nginx/conf.d/$domain.d/respawn.conf
+
+sudo service nginx reload
+sudo yunohost app ssowatconf

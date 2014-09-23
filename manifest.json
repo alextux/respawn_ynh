@@ -1,0 +1,52 @@
+{
+    "name": "Respawn",
+    "id": " respawn",
+    "description": {
+        "en": "Read KeePass 2.X password database",
+        "fr": "Lecture des bases de données de mot de passe au format Keepass 2.X"
+    },
+    "developer": {
+        "name": "alextuxy",
+        "email": "tuxy@tuxcloud.fr.fr",
+        "url": ""
+    },
+    "multi_instance": "false",
+    "arguments": {
+        "install" : [
+            {
+                "name": "domain",
+                "ask": {
+                    "en": "Choose a domain for respawn",
+                    "fr": "Choisissez un domaine pour respawn"
+                },
+                "example": "domain.org"
+            },
+            {
+                "name": "path",
+                "ask": {
+                    "en": "Choose a path for respawn",
+                    "fr": "Choisissez un chemin pour votre respawn"
+                },
+                "example": "/respawn",
+                "default": "/respawn"
+            },
+            {
+                "name": "admin",
+                "ask": {
+                    "en": "Choose the YunoHost user",
+                    "fr": "Choisissez l'utilisateur YunoHost associé"
+                },
+                "example": "johndoe"
+            },
+            {
+                "name": "is_public",
+                "ask": {
+                    "en": "Is it a public website ?",
+                    "fr": "Est-ce un site public ?"
+                },
+                "choices": ["Yes", "No"],
+                "default": "No"
+            }
+        ]
+    }
+}
