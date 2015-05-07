@@ -2,8 +2,8 @@
     "name": "respawn",
     "id": "respawn",
     "description": {
-       "en": "Read KeePass 2.X password database",
-       "fr": "Lecture des bases de données de mot de passe au format Keepass 2.X"
+       "en": "Get a copy of a website page on your own server with one click",
+       "fr": "Obtenez une copy de la page d'un site sur son server personel en un click"
     },
     "developer": {
         "name": "alextuxy",
