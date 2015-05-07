@@ -2,8 +2,9 @@
 
 domain=$(sudo yunohost app setting respawn domain)
 
-sudo rm -rf /var/www/browsepass
-sudo rm -f /etc/nginx/conf.d/$domain.d/browsepass.conf
+sudo rm -rf /var/www/respawn
+sudo rm -f /etc/nginx/conf.d/$domain.d/respawn.conf
+sudo rm -rf /home/yunohost.app/respawn/data
 
 sudo service nginx reload
 sudo yunohost app ssowatconf
