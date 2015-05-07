@@ -3,10 +3,18 @@
 # Retrieve arguments
 domain=$1
 path=$2
-user=$3
+admin=$3
 is_public=$4
 app=respawn
 final_path=/var/www/respawn
+
+# Check that admin user is an existing account
+sudo yunohost user list --json | grep -q "\"username\": \"$admin\""
+if [[ ! $? -eq 0 ]]; then
+echo "Error : the chosen admin user does not exist"
+    exit 1
+fi
+sudo yunohost app setting shaarli admin -v $admin
 
 # Check domain/path availability
 sudo yunohost app checkurl $domain$path -a respawn
@@ -14,13 +22,8 @@ if [[ ! $? -eq 0 ]]; then
     exit 1
 fi
 
-# Check user
-sudo yunohost user list --json | grep -q "\"username\": \"$user\""
-if [[ ! $? -eq 0 ]]; then
-echo "Wrong user"
-    exit 1
-fi
-sudo yunohost app setting $app ftp_user -v $user
+# Install dependencies
+sudo apt-get install php5-cli -y -qq
 
 # Change user ID in configurations
 sed -i "s@HOST@$domain@g" ../sources/index.html
