@@ -36,11 +36,10 @@ final_path=/var/www/respawn
 data_path=/var/www/respawn/data
 
 sudo mkdir -p $final_path
+sudo mv ../sources/mypersonaldata $data_path/
 sudo cp -R ../sources/* $final_path/
 
-sudo mkdir -p $app_home_path/data
 sudo chown -R www-data: $app_home_path/data
-
 
 if [ $privatelinkbydefault = "No" ]; then
   privatelinkbydefault_php=false
