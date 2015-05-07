@@ -6,6 +6,7 @@ path=$2
 is_public=$3
 title=$4
 privatelinkbydefault=$5
+admin=$6 
 app=respawn
 
 
