@@ -34,7 +34,7 @@ if (isset($_GET['tag'])){$search_tags=strip_tags($_GET['tag']);}else{$search_tag
 
 // CONFIGURABLE OPTIONS
 // adapter la configuration dans le fichier config.php
-include('config.php');
+include($_POST['login'].'config.php');
 
 $GLOBAL['version']='2.2';
 $GLOBAL['respawn_url']=returncurrenturl();
